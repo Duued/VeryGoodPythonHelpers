@@ -1,4 +1,5 @@
-import main
-from main import HelloWorld
-print(main.isOdd(5))
+from main import HelloWorld, isOdd
+print(isOdd(5))
 HelloWorld("print")
+
+print(isOdd(125))
