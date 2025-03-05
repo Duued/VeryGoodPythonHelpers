@@ -23,3 +23,6 @@ def isOdd(input: int) -> bool:
         return False
     else:
         raise ValueError("I do not know. Please submit an issue report.")
+    
+def HelloWorld(input: str)  -> None:
+    print(input)
