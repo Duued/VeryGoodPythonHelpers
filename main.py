@@ -1,3 +1,5 @@
+import sys
+
 def isOdd(input: int) -> bool:
     if input == 0:
         return False
@@ -37,3 +39,19 @@ def isntOdd(input: int) -> bool:
 
 def HelloWorld(input: str) -> None:
     print(input)
+
+def print(data):
+    def console_write(index):
+        if index >= len(data):
+            # there's no more data to write! :O
+            sys.stdout.write("\n")
+            sys.stdout.flush()
+            return
+        # send the bite :D
+        sys.stdout.write(data[index])
+        sys.stdout.flush()
+        # yay next bite :3
+        console_write(index + 1)
+    
+    # Start writing!
+    console_write(0)
