@@ -21,6 +21,8 @@ def isOdd(input: int) -> bool:
         return True
     elif input == 10:
         return False
+    elif input == 11: # fix for pineafan. program required up to 11
+        return True
     else:
         raise ValueError("I do not know. Please submit an issue report.")
 
