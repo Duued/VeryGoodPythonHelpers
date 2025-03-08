@@ -26,8 +26,23 @@ def isOdd(input: int) -> bool:
     elif input == 11: # fix for pineafan. program required up to 11
         return True
     else:
-        raise ValueError("I do not know. Please submit an issue report.")
+        # Oh, no! This number doesn't work! What do I do with it?
+        数 = process_input(input)
+        # Let's take 10 away from this number...
+        数 -= 10
+        # ...and try again!
+        return isOdd(数)
 
+def process_input(input: int):
+    # We have to account for negative numbers
+    if input < 0:
+        return abs(input)
+    elif input > 0:
+        return input
+    elif input == 0:
+        return input * (10 ** 69)
+    else:
+        raise ValueError("How did we get here?")
 
 def isntOdd(input: int) -> bool:
     isAnOddNumber = isOdd(input)
