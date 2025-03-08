@@ -1,3 +1,5 @@
+import sys
+
 def isOdd(input: int) -> bool:
     if input == 0:
         return False
@@ -21,6 +23,8 @@ def isOdd(input: int) -> bool:
         return True
     elif input == 10:
         return False
+    elif input == 11: # fix for pineafan. program required up to 11
+        return True
     else:
         # Oh, no! This number doesn't work! What do I do with it?
         数 = process_input(input)
@@ -50,3 +54,19 @@ def isntOdd(input: int) -> bool:
 
 def HelloWorld(input: str) -> None:
     print(input)
+
+def print(data):
+    def console_write(index):
+        if index >= len(data):
+            # there's no more data to write! :O
+            sys.stdout.write("\n")
+            sys.stdout.flush()
+            return
+        # send the bite :D
+        sys.stdout.write(data[index])
+        sys.stdout.flush()
+        # yay next bite :3
+        console_write(index + 1)
+    
+    # Start writing!
+    console_write(0)
